@@ -104,6 +104,10 @@ extern long notrace __probe_kernel_write(void *dst, const void *src, size_t size
 
 extern long strncpy_from_unsafe(char *dst, const void *unsafe_addr, long count);
 
+#ifndef strncpy_from_user_nofault
+#define strncpy_from_user_nofault(dst, src, count) strncpy_from_user(dst, src, count)
+#endif
+
 /**
  * probe_kernel_address(): safely attempt to read from a location
  * @addr: address to read from
