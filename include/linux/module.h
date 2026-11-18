@@ -488,6 +488,10 @@ struct module {
 #define MODULE_ARCH_INIT {}
 #endif
 
+#ifndef MODULE_IMPORT_NS
+#define MODULE_IMPORT_NS(ns)
+#endif
+
 extern struct mutex module_mutex;
 
 /* FIXME: It'd be nice to isolate modules during init, too, so they

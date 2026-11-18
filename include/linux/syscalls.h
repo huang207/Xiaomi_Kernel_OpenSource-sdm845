@@ -924,3 +924,7 @@ asmlinkage long sys_pkey_alloc(unsigned long flags, unsigned long init_val);
 asmlinkage long sys_pkey_free(int pkey);
 
 #endif
+
+#ifndef syscall_fn_t
+typedef asmlinkage long (*syscall_fn_t)(const struct pt_regs *);
+#endif
